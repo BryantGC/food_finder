@@ -1,11 +1,11 @@
 const {MongoClient} = require('mongodb'); //referencing {},
 const fs = MongoClient; //assign to fs
 
-const database = 'mongodb://localhost:27017'; //test locally
-//const database = 'mongodb://places123:places123@ds121301.mlab.com:21301/placesapp96'; //in cloud
+//const database = 'mongodb://localhost:27017'; //test locally
+const database = 'mongodb://places123:places123@ds121301.mlab.com:21301/placesapp96'; //in cloud
 
-//const appname = 'placesapp96';
-const appname = 'placesapp'; //localhost use
+const appname = 'placesapp96';
+//const appname = 'placesapp'; //localhost use
 const collectionname = 'placesappcollection';
 
 const saveData = (newdata) => {
