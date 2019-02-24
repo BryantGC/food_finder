@@ -112,6 +112,8 @@ const extractData = (originalResults) => {
   return placesObj.table;
 };
 
-server.listen(port, () =>{
+var appserver = server.listen(port, () =>{
   console.log(`Server started on port ${port}`)
 });
+
+module.exports = appserver;
