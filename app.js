@@ -3,7 +3,6 @@ const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const server = express();
-const path = require('path');
 const filemgr = require('./filemgr');
 const port = process.env.PORT || 3000;
 
