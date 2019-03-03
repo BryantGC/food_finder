@@ -32,6 +32,10 @@ server.get('/', (req, res) => {
   res.render('home.hbs');
 });
 
+server.get('/shop', (req, res) => {
+  res.render('shop.hbs');
+});
+
 server.post('/getplaces',(req, res) => {
   const addr = req.body.address;
   const placetype = req.body.placetype;
