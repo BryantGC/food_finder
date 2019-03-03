@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+   <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+  <link href="sticky-footer-navbar.css" rel="stylesheet">
+  <link href="custom.css" rel="stylesheet">
+
+  <!-- Custom font -->
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+
+  <style>
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .card {
+    float: right;
+    margin-top: -100px;
+  }
+  .btn {
+      float: right;
+  }
+  .checked{
+      color: orange;
+  }
+  </style>
+</head>
+<body>
+    <!--Navbar-->
+    {{> navbar}}
+
+    <div class="jumbotron text-center">
+    <img src={{photo_reference}} width="800" height="300"> 
+    </div>
+
+    <div class="container ">
+        <h3>{{name}}</h3>
+        <p>Shop detail</p>
+        <p><em>PHONE NUMBER</em></p>
+        <p>{{address}}</p>
+
+
+        <div class="card" style="width: 18rem;">
+          <h5 class="card-title text-center">Rating</h5>
+          <hr>
+          <div class="card-body">
+            <h5 class="card-title">Rating</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+            <h2>Feedback</h2>
+            <br/>
+            <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="1star" style="font-size: 30px; cursor: pointer;"></span>
+            <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="2star" style="font-size: 30px; cursor: pointer;"></span>
+            <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="3star" style="font-size: 30px; cursor: pointer;"></span>
+            <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="4star" style="font-size: 30px; cursor: pointer;"></span>
+            <span class="fa fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="5star" style="font-size: 30px; cursor: pointer;"></span>   
+            <br/><br/>
+            <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="showRating()">Submit</button>
+            </div>
+            <br><br>
+            <div class="media">
+              <img src="..." class="align-self-start mr-3" alt="...">
+              <div class="media-body">
+                <h5 class="mt-0">Top-aligned media</h5>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              </div>
+            </div>
+            <hr>
+  </div>   
+    
+    <!-- FOOTER -->
+{{> footer}}
+<!-- FOOTER -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+<script type="text/javascript">
+var rating = "";
+function starmark(item)
+{
+    var count = item.id[0];
+    rating = count;
+    var subid = item.id.substring(1);
+
+    for(var i=0; i<5; i++)
+    {
+        if(i<count)
+        {
+            document.getElementById((i+1)+subid).style.color= "orange";
+        }
+        else
+        {
+            document.getElementById((i+1)+subid).style.color= "grey";
+        }
+    }
+}
+function showRating()
+{
+    alert(rating);
+}
+</script>
+
+</html>
