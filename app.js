@@ -24,12 +24,17 @@ hbs.registerHelper('list', (items, options) => {
   for(var i=0; i<length; i++){
     out = out + options.fn(items[i]);
   }
-
   return out;
 });
 
+//home route
 server.get('/', (req, res) => {
   res.render('home.hbs');
+});
+
+//register form route
+server.get('/register', (req, res) => {
+  res.render('register.hbs');
 });
 
 server.post('/getplaces',(req, res) => {
