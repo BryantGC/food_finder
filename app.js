@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const server = express();
+const path = require('path');
 const filemgr = require('./filemgr');
 const port = process.env.PORT || 3000;
 
@@ -23,16 +24,27 @@ hbs.registerHelper('list', (items, options) => {
   for(var i=0; i<length; i++){
     out = out + options.fn(items[i]);
   }
-
   return out;
 });
 
+//home route
 server.get('/', (req, res) => {
   res.render('home.hbs');
 });
 
+//shop route
 server.get('/shop', (req, res) => {
   res.render('shop.hbs');
+});
+
+//register form route
+server.get('/register', (req, res) => {
+  res.render('register.hbs');
+});
+
+//login form route
+server.get('/login', (req, res) => {
+  res.render('login.hbs');
 });
 
 server.post('/getplaces',(req, res) => {
