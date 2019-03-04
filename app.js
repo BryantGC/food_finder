@@ -32,6 +32,11 @@ server.get('/', (req, res) => {
   res.render('home.hbs');
 });
 
+//shop route
+server.get('/shop', (req, res) => {
+  res.render('shop.hbs');
+});
+
 //register form route
 server.get('/register', (req, res) => {
   res.render('register.hbs');
