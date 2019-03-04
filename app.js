@@ -37,6 +37,11 @@ server.get('/register', (req, res) => {
   res.render('register.hbs');
 });
 
+//login form route
+server.get('/login', (req, res) => {
+  res.render('login.hbs');
+});
+
 server.post('/getplaces',(req, res) => {
   const addr = req.body.address;
   const placetype = req.body.placetype;
