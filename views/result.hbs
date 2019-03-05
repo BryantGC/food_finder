@@ -99,5 +99,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
+<script type="text/javascript">
+var rating = "";
+function starmark(item)
+{
+    var count = item.id[0];
+    rating = count;
+    var subid = item.id.substring(1);
 
+    for(var i=0; i<5; i++)
+    {
+        if(i<count)
+        {
+            document.getElementById((i+1)+subid).style.color= "orange";
+        }
+        else
+        {
+            document.getElementById((i+1)+subid).style.color= "grey";
+        }
+    }
+}
+function showRating()
+{
+    alert(rating);
+}
+</script>
 </html>
